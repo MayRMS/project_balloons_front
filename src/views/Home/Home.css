@@ -1,0 +1,48 @@
+
+.homeDesign{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    width: 100vw; 
+    background-image: url(./fondoRegister.jpeg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.listDesign{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    width: 70vw;
+
+}
+
+.homeButtonsDesign{
+    display: flex;
+    flex-direction:column;
+    justify-content:space-evenly;
+    height: 45vh;
+    width: 10vw;
+
+}
+
+.offersButtonDesign{
+    display: flex;
+    justify-content: center;
+    width: 20vw;
+    height: 10vh;
+
+}
+
+.createOfferButtonDesign{
+    display: flex;
+    justify-content: center;
+    width: 20vw;
+    height: 10vh;
+
+}

@@ -1,0 +1,141 @@
+
+@font-face {
+    font-family: 'I Love Glitter';
+    src: url('../../components/Header/mf-i-love-glitter.regular.ttf');
+    font-family: 'My December';
+    src: url('../../common/my-december.regular.ttf');
+}
+
+
+.registerContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: #3F0D02;
+}
+
+.registerDesign {
+
+    display: flex;
+    flex-direction: column;
+    background-color: #ee9623b3;
+    border-radius: 6px;
+    align-items: center;
+    height: 55%;
+    width: 45%;
+    font-weight: bold;
+    font-family: 'I Love Glitter';
+    text-align:center;
+    
+}
+
+input {
+    width: 50%;
+    height: 15%;
+    margin: 1%;
+    font-family: 'My December';
+    font-weight: bolder;
+    font-size: 190%;
+    border-radius: 4px;
+    border: #fa8509;
+}
+
+.linkDesign { 
+    font-weight: bold;
+    font-size: 40px;
+    border-radius: 10px;
+    margin-top: 5%;
+    text-decoration: underline;
+    color:rgb(65, 158, 158);
+    font-family: 'My December';
+    
+    
+}
+
+.linkDesign:hover {
+    box-shadow: .5em .5rem 1rem #fff
+    , -.5em -.5rem 1rem #ccc;
+    transition: 0.3s;
+    
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3%;
+    border-radius: 1em;
+    cursor: pointer;
+    transition: 0.2s;
+    color: white;
+    background-color: transparent;
+    color: #3F0D02;
+    padding: 1rem 1.5rem; 
+    border: 2px solid #eee; 
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: all 1s ease; 
+    box-shadow: .5em .5rem 1rem #ccc,
+        -.5em -.5rem 1rem #fff;
+    font-family: 'I Love Glitter';
+    font-size: 190%;
+    font-weight: bolder;
+}
+button:hover {
+    box-shadow: .5em .5rem 1rem #fff
+    , -.5em -.5rem 1rem #ccc;
+    transition: 0.3s;
+    background-color: #FF9321;
+}
+
+button:active {
+    box-shadow: inset .2rem .2rem 1rem #fff
+      , inset -.2rem -.2rem 1rem #ccc
+}
+
+
+  @media (max-width:380px){
+    input {
+        width: 80%;
+        margin: 5%;
+        font-size: 200%;
+        border-radius: 4px;
+        border: #fa8509;
+    }
+
+    .loginContainer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+        width: 100vw;
+        
+        background-repeat: no-repeat;
+        background-size: cover;
+        text-align: center;
+        color: #3F0D02;
+    }
+
+    .loginDesign {
+        height: 45%;
+        width: 70%;
+        font-weight: bold;
+        margin-top: 10%;
+        background-color: #ff9f21;
+    }
+
+    .linkDesign {
+        font-weight: bold;
+        font-family: 'I Love Glitter';
+        font-size: 170%;
+        margin-left: 35%;
+        margin-top: 15%;
+        font-family: 'My December';
+    }
+}
