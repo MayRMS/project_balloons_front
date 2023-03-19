@@ -6,8 +6,9 @@
 
 ‘Balloons’, o globos, representa algo que nos aporta felicidad pero al mismo tiempo tiene que ser cuidado dada su fragilidad, y esta app se basa en ese concepto.
 
-# English (frontend)
  This is the second part of the final project for the GeeksHubs Academy FullStack Developer bootcamp that consists of creating the frontend part for a totaly functional application. 
+
+# RESUMEN
 
 - Este proyecto consiste en la creación de un Front para el proyecto final del bootcamp Full Stack Developer que imparte GeeksHubs Academy.
 
@@ -49,29 +50,47 @@ Se ha intentado sacar el máximo provecho a las opciones que nos proporciona Rea
 
 ### Vista Login.
 ![image](https://github.com/MayRMS/project_balloons_front/blob/main/img/user_Login.png)
+Responsive
+![image](https://github.com/MayRMS/project_balloons_front/blob/main/img/login_Responsive.png)
 
 ### Vista Registro de USERS.
-![Image text](https://raw.githubusercontent.com/MayRMS/React_-movies/master/img/Captura%20de%20Pantalla%202023-01-29%20a%20las%2020.10.39.png)
+![image](https://github.com/MayRMS/project_balloons_front/blob/main/img/registerUser.png)
+Responsive
+![image](https://github.com/MayRMS/project_balloons_front/blob/main/img/register_Responsive.png)
+![image](https://github.com/MayRMS/project_balloons_front/blob/main/img/registerUser_Responsive.png)
+
 
 ### Vista Home/ Principal de USERS
+![image](https://github.com/MayRMS/project_balloons_front/blob/main/img/userOffers_allDetail_UserHome.png)
+Responsive
+![image](https://github.com/MayRMS/project_balloons_front/blob/main/img/allOffers_UserHomeResponsive.png)
 
+![image](https://github.com/MayRMS/project_balloons_front/blob/main/img/offers_Detail.png)
 
 ### Vista Home/ Mis Ofertas de USERS
-
+![image](https://github.com/MayRMS/project_balloons_front/blob/main/img/userOffers_UserHomeResponsive.png)
 
 ### Vista Home/ Mis Ofertas con despliegue de Inscritos de USERS
+![image](https://github.com/MayRMS/project_balloons_front/blob/main/img/userOffers_regProfiles_UserHome.png)
+Responsive
+![image](https://github.com/MayRMS/project_balloons_front/blob/main/img/userOffers_regProfiles_UserHomeResponsive.png)
 
+![image](https://github.com/MayRMS/project_balloons_front/blob/main/img/userOffers_showProfiles_UserHome.png)
 
 ### Vista Home/ Formulario Crear Oferta de USERS
-
+![image](https://github.com/MayRMS/project_balloons_front/blob/main/img/createOffers_UserHome.png)
+Responsive
+![image](https://github.com/MayRMS/project_balloons_front/blob/main/img/createOffers_UserHomeResponsive.png)
 
 ### Vista Registro de CARERS.
-
+![image](https://github.com/MayRMS/project_balloons_front/blob/main/img/registerCarer.png)
+Responsive
+![image](https://github.com/MayRMS/project_balloons_front/blob/main/img/registerCarer_Responsive.png)
 
 ### Vista Home/ Principal de CARERS(CON BOTÓN PARA INSCRIBIRNOS)
-
-
-### Vista Home/ Mis Ofertas (en las que me he inscrito).
+![image](https://github.com/MayRMS/project_balloons_front/blob/main/img/allOffers_carerHome.png)
+Responsive
+![image](https://github.com/MayRMS/project_balloons_front/blob/main/img/allOffers_carerHome_Responsive.png)
 
 
 
