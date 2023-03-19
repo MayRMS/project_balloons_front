@@ -1,70 +1,98 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Frontend-BALLOONS
 
-## Available Scripts
+### ¿Qué es Balloons?
 
-In the project directory, you can run:
 
-### `npm start`
+‘Balloons’, o globos, representa algo que nos aporta felicidad pero al mismo tiempo tiene que ser cuidado dada su fragilidad, y esta app se basa en ese concepto.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# English (frontend)
+ This is the second part of the final project for the GeeksHubs Academy FullStack Developer bootcamp that consists of creating the frontend part for a totaly functional application. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Este proyecto consiste en la creación de un Front para el proyecto final del bootcamp Full Stack Developer que imparte GeeksHubs Academy.
 
-### `npm test`
+Si bien ya hay apps que solventen este tipo de dificultades, no hay ninguna(a priori) que aun el cuidado tanto de niños como de mascotas, uniendo profesionales en pedagogía infantil y estudiantes de veterinaria, comportamiento animal, etc, facilitamos el acceso a los usuarios con una interfaz efectiva y simple, y permitimos a jóvenes que necesitan compaginar sus estudios que tengan contacto con aquello a lo que se van a dedicar de una forma totalmente real.
+A veces la cantidad de posibilidades o lo poco intuitivo de las mismas, generan un rechazo en su uso, por lo que se intentará que esta sea asequible para usuarios de todo tipo, incluido gente con poca relación con las tecnologías: por ejemplo, hay gente de más edad que necesita, por problemas de distinta índole, que alguien cuide o pasee a sus mascotas, pero no se relacionan del todo bien con las tecnologías. De este modo tendrán la posibilidad de hacerlo fácilmente.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Las funcionalidades que se requerirán para esta primera comprobación radican en la consulta de datos por parte del usuario, el login, register, 
+y algunas otras que desarrollaremos de manera más concreta en los siguientes apartados.
+El proyecto consiste en poner en práctica los conocimientos adquiridos durante todo el Bootcamp y principalmente la implementación 
+de REACT.
+Se ha intentado sacar el máximo provecho a las opciones que nos proporciona React, tan solo contamos con 3 vistas, a las que aplicaremos multitud de componentes para que se adecúen a nuestras necesidades, como formularios dinámicos, hooks, inputs que se despliegan en lugar de llevarnos a otras vistas, etc.
 
-### `npm run build`
+**Tecnologias Usadas**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![js2](https://user-images.githubusercontent.com/114490860/224815744-fae6f0fb-795c-4a0b-b7ed-4a7a2941bc3a.png)![react2](https://user-images.githubusercontent.com/114490860/224815806-d54163b1-b624-44fe-a05b-a57a3358b26b.png)![redux](https://user-images.githubusercontent.com/114490860/224816086-a19996cf-2d35-473f-954d-c892d779f46c.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Flow y vistas del usuario: Explicación
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Flow Usuario 1: USER**
 
-### `npm run eject`
+1. Al entrar a la vista inicial sin estar logueados, nos mostrará el login, en el cual podremos loguearnos como User, Carer (profesional) o bien ir al registro.
+2. En este caso entraremos al loguin como User, es decir, alguien que entra para crear ofertas y encontrar cuidadores que se adecuen a sus necesidades. Una vez introducidos los campos correctamente se nos redireccionaria a la vista "userHome", que difiere de la que obtendríamos de estar logueados como cuidadores.
+3. Si no estuviésemos registrados ingresaríamos al link que se nos indica, en este, podemos registrarnos como usuarios o, una vez más, como profesionales . Cada opción nos derivará a un formulario de registro distinto, y una vez registrados, de nuevo volveremos al loguin para poder acceder.
+4. Al loguearnos la página entenderá segun el usuario que ha de mostrar el Home de uno u otro. En el caso del usuario, nos traerá en tarjetas todos los perfiles de cuidadores de que disponga la aplicación (con un detalle estético), y dos botones, que irán cambiando según en que parte del home del usuario estemos. Por el momento se mostrarán: Crear Oferta y Mis Ofertas.
+5. Mis Ofertas: en estas encontramos todas las que hemos creado, con un botón en cada una que permite que se desplieguen aquellos cuidadores inscritos en la misma, con su email para que podamos contactarles. Se verán en colores distintos si tenemos o no algún inscritoEn este caso los botones son: Ver perfiles y Crear Oferta.
+6. Crear Oferta: nos renderiza un formulario para realizar una oferta de forma fácil e intuitiva, que pasará a formar parte de la colección explicada en el punto anterior.
+7. El usuario podrá en todo momento desloguearse desde el botón del header, que permanece en todo momento visible, a excepción de en register.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**Flow Usuario 2: CARER**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Al entras a la vista inicial como ya hemos dicho, no estando logueados, pasaremos a introducir los datos como Carer (profesional) o bien ir si aún no lo somos, podemos ir al registro.
+2. Como en el caso anterior, al completar los campos correctamente se nos redireccionaria a la vista "carerHome", que mostrará elementos distintos a la de usuario.
+3. Si no estuviésemos registrados ingresaríamos al link que se nos indica, el cual es dinámico y se adapta a la petición introduciéndo campos distintos para uno y otro.
+4. Al loguearnos como cuidadores, la página muestra el Home que le corresponde. En el caso del cuidador, nos traerá en tarjetas todas la ofertas de que disponga la aplicación, y un botón para inscribirnos en las mismas y puedan contactarnos.Además mostraremos otro botón durante todo el tiempo que irá cambiando según en que parte del home del cuidador estemos: Ofertas en las que me he inscrito.
+5. Ofertas en las que me he inscrito: en estas encontramos todas aquellas en las que, en la otra vista, hemos dado al botón de inscribirse.
+6.El usuario podrá en todo momento desloguearse desde el botón del header, que permanece en todo momento visible, a excepción de en register.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# ¡Este es el resultado!
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Vista Login.
+![image](https://github.com/MayRMS/project_balloons_front/blob/main/img/user_Login.png)
 
-## Learn More
+### Vista Registro de USERS.
+![Image text](https://raw.githubusercontent.com/MayRMS/React_-movies/master/img/Captura%20de%20Pantalla%202023-01-29%20a%20las%2020.10.39.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Vista Home/ Principal de USERS
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+### Vista Home/ Mis Ofertas de USERS
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+### Vista Home/ Mis Ofertas con despliegue de Inscritos de USERS
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+### Vista Home/ Formulario Crear Oferta de USERS
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+### Vista Registro de CARERS.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+### Vista Home/ Principal de CARERS(CON BOTÓN PARA INSCRIBIRNOS)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+### Vista Home/ Mis Ofertas (en las que me he inscrito).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+## Instalación
+***
+Para correrlo en local:
+```
+$ git clone https://example.com
+$ cd ../path/to/the/file
+$ npm install
+$ npm start
+```
+
+**Cuestiones a mejorar**
+Ordenados de mayor a menor complejidad.
+- Mejor implementacion de la comunicación entre usuarios con un sistema de mensajes en la aplicación, comentarios sobre usuarios y recomendaciones, etc.
+- Realizar una búsqueda por filtro según tarifa, localidad, tipo de cuidador... para faciliatar el halazgo de cuidadores que se adecún a las necesidades mucho más rápido.
+- Poder modificar los perfiles y borrar ofertas.
+
+**Agradecimientos**
+- Dar las gracias al equipo de <a href="https://geekshubsacademy.com/">GeeksHubs Academy</a> por los conocimientos adquiridos y su ayuda en el desempeño de este proyecto.
+
+**Code realizado por <a href="https://www.linkedin.com/in/maria-rms/">María Ruiz de Molina Sierra</a>**
+
