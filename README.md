@@ -113,5 +113,5 @@ Ordenados de mayor a menor complejidad.
 **Agradecimientos**
 - Dar las gracias al equipo de <a href="https://geekshubsacademy.com/">GeeksHubs Academy</a> por los conocimientos adquiridos y su ayuda en el desempeño de este proyecto.
 
-**Code realizado por <a href="https://www.linkedin.com/in/maria-rms/">María Ruiz de Molina Sierra</a>**
+**Codigo realizado por <a href="https://www.linkedin.com/in/maria-rms/">María Ruiz de Molina Sierra</a>**
 
