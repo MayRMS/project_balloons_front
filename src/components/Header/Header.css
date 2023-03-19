@@ -12,6 +12,7 @@
     background: linear-gradient(50deg,#F57A67, #FAC870, #FFEDA3 , #ffdd0097);
     height: 15vh;
     width: 100vw;
+    min-width: 100vw;
     
 }
 
@@ -44,7 +45,7 @@
 
 }
 
-@media (max-width:380px){
+@media (max-width:804px){
     .headerDesign{
 
         background: linear-gradient(50deg,#F57A67, #FAC870, #FFEDA3 , #ffdd0097);

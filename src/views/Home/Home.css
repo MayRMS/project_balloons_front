@@ -1,48 +1,44 @@
 
 .homeDesign{
-
-    display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 85vh;
-    width: 100vw; 
+    min-height: 85vh;
+    width: 100%; 
     background-image: url(./fondoRegister.jpeg);
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
     background-size: contain;
 }
 
 .listDesign{
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 85vh;
-    width: 70vw;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
 
 }
 
-.homeButtonsDesign{
-    display: flex;
-    flex-direction:column;
-    justify-content:space-evenly;
-    height: 45vh;
-    width: 10vw;
 
-}
 
-.offersButtonDesign{
-    display: flex;
-    justify-content: center;
-    width: 20vw;
-    height: 10vh;
+@media (max-width:804px){
 
-}
+    .homeDesign{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 70%;
+        width: 100%;
+        background-image: url(./fondoRegister.jpeg);
+        background-repeat:repeat-y;
+        background-size: cover;
+        text-align: center;
+        color: #3F0D02;
+    }
 
-.createOfferButtonDesign{
-    display: flex;
-    justify-content: center;
-    width: 20vw;
-    height: 10vh;
+    
 
+    
 }

@@ -18,8 +18,10 @@ const Login = () => {
 
     const sendLoginData = async () => {
         const logUser =  await postLogin(credentials, type);
-        dispatch(login({userPass: {[type]: logUser[type], token: logUser.token, type}}));
-        delay(navigate, ["/"], 750);
+        if (logUser) {
+            dispatch(login({userPass: {[type]: logUser[type], token: logUser.token, type}}));
+            delay(navigate, ["/"], 750);
+        }
     }
 
     return (
@@ -32,9 +34,10 @@ const Login = () => {
                         handler={inputHandler}
                         cb={setCredentials}
                         elements={userTypes[type].loginInputs}/>
+                    <div className='checkboxDesign'>SOY CUIDADOR
+                    <input className='checkbox'type="checkbox" checked={type === 'carer'} onChange={() => setType(getOppositeType(userTypes, type).type)}/>
+                    </div>
                 </div>
-                    <div>SOY CUIDADOR</div>
-                    <input type="checkbox" checked={type === 'carer'} onChange={() => setType(getOppositeType(userTypes, type).type)}/>
                     <div className='linkDesign' onClick={() => setTimeout(() => { navigate("/register") }, 200)}>¿Aún no estás registrado? Puedes hacerlo aquí</div>
                 </div>
         </div>

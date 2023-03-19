@@ -34,3 +34,14 @@ export const possibleStates = {
     offerList: 'Mis ofertas',
     offerForm: 'Crear oferta'
 }
+export const labels = { 
+    availability: 'disponibilidad', 
+    feeOffered: 'Tarifa ofrecida',
+    specifications: 'especificaciones', 
+    title: 'titulo',
+    type: 'tipo',
+    workArea: 'área',
+    fee: 'tarifa',
+    email: 'email',
+    name: 'nombre'
+}

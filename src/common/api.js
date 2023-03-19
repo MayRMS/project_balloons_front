@@ -49,9 +49,41 @@ export const listOffers = async () => {
 };
 export const listOwnOffers = async (id) => {
     try {
-        const res = await axios.get(`${root}/offer/${id}`)
+        const res = await axios.get(`${root}/offer/user/${id}`)
         return res.data;
     } catch (error) {
         console.log(error)
     }
 }
+export const apply = async (offerId, carerId) => {
+    try {
+        const res = await axios.put(`${root}/offer/${offerId}/carer/${carerId}`)
+        return res.data;
+    } catch (error) {
+        console.log(error)
+    }
+}
+export const getOfferByCarer = async (carerId) => {
+    try {
+        const res = await axios.get(`${root}/offer/carer/${carerId}`)
+        return res.data;
+    } catch (error) {
+        console.log(error)
+    }
+}
+export const getCarersInOffer = async (ids) => {
+    try {
+        const res = await axios.get(`${root}/carer/registered/?ids=${ids.join()}`)
+        return res.data;
+    } catch (error) {
+        console.log(error)
+    }
+}
+export const getAllOffers = async () => {
+    try {
+        const res = await axios.get(`${root}/offer`)
+        return res.data;
+    } catch (error) {
+        console.log(error)
+    }
+};

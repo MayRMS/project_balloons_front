@@ -1,83 +1,91 @@
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
-import './UserHome.css'
-import { useDispatch, useSelector } from 'react-redux';
-import { inputHandler, delay, getOppositeType } from '../../common/utils';
-import { userData } from '../../userSlice';
 
+import './UserHome.css'
+import { userData } from '../../userSlice';
 import { DinamicForm } from '../../components/DinamicForm/DinamicForm';
 import { DinamicList } from '../../components/DinamicList/DinamicList';
-import { ProfileCard } from '../ProfileCard/ProfileCard';
-import { possibleStates, offerInputs, formValues } from './userForms.js'
+import { getCarers, postOffer, listOwnOffers, getCarersInOffer } from '../../common/api';
+import { delay, inputHandler, makeObjForDinamicList } from '../../common/utils';
+import { possibleStates, offerInputs, formValues, labels } from './userForms.js';
+import { ActionButton } from '../ActionButton/ActionButton';
 
-import { getCarers, postOffer, listOffers, listOwnOffers } from '../../common/api';
+
 export const UserHome = () => {
-    const [state, setState] = useState('carerList');
-    const [offerFormValue, setOfferFormValue] = useState(formValues);
+    const navigate = useNavigate();
     const [carers, setCarers] = useState([]);
     const [offers, setOffers] = useState([]);
+    const [state, setState] = useState('carerList');
+    const [offerFormValue, setOfferFormValue] = useState(formValues);
 
-    const dispatch = useDispatch();
     const userLoged = useSelector(userData);
-    
+    const userId = userLoged?.userPass?.user?.id
+
     const createOffer = async () => {
-        console.log({...offerFormValue, id: userLoged.userPass.user.id})
-        const newOffer =  await postOffer({...offerFormValue, user: userLoged.userPass.user.id});
+        await postOffer({...offerFormValue, user: userId});
         setState('carerList')   
     }
     const getCarersData = async () => {
         const res = await getCarers()
         setCarers(res.carers)  
     }
-    const getAllOffers = async () => {
-        const res = await listOffers()
-        setOffers(res.offers)
+    const getRegisteredCarers = async (carerIds) => {
+        const res = await getCarersInOffer(carerIds)
+        setCarers(res.carers)
+        console.log({carers})  
     }
     const getUserOffers = async () => {
-        const res = await listOwnOffers(userLoged.userPass.user.id)
-        setOffers(res.offers)
+        const res = await listOwnOffers(userId)
+        setOffers(res.offers.map(e => ({...e, list: false})))
     }
 
-    
-
-    const labels = { 
-        availability: 'disponibilidad', 
-        feeOffered: 'Pasta ofrecida',
-        specifications: 'especificaciones', 
-        title: 'titulo',
-        type: 'tipo',
-        workArea: 'area',
-        fee: 'tarifa'
-    }
-    const makeObjForDinamicList = (obj) => {
-        const o = {}
-        for (const key of Object.keys(obj || [])) {
-            if(labels[key]) o[key] = {label: labels[key], value: obj[key]}
-        }
-        return o
-    }
     useEffect( () =>{
+        if(!userId) delay(navigate, ['login'], 200);
         getCarersData()
         getUserOffers()
-        
-    },[])
+    },[state])
+
 return (
-    <div >
-        <div className='userHomeDesign' >USER HOME</div>
-        {state == 'carerList' && carers.map((e, i)=> <ProfileCard key={i} carer={e}/>)}
-        {state == 'offerList' && offers.map((e, i) => <DinamicList key={i} obj={makeObjForDinamicList(e)} name='list'/>)}
-        {state == 'offerForm' && <div> <DinamicForm 
+    <div className='userHomeContainer' >
+        {state == 'carerList' && <div className='userHomeDesign' >{carers.map((e, i) => <DinamicList
+            key={i} 
+            obj={makeObjForDinamicList(e, labels)} 
+            name='list'/>)}</div>}
+        
+            {state == 'offerList' && <div className='userHomeDesign' >{offers.map((e, i) => <div key={i}
+                className={e.registeredCarers?.length ? 'matched' : 'list'}>
+                <DinamicList 
+                    obj={makeObjForDinamicList(e, labels)}
+                    name={'offer'}/>
+                {e.registeredCarers.length ? <>
+                    <button className='regCarersDesign' onClick={() => {
+                        e.list = !e.list
+                        getRegisteredCarers(e.registeredCarers)
+                        console.log(carers)
+                    }}>Perfiles Inscritos</button>
+                    {e.list && carers.map((j, idx) => <DinamicList
+                        key={idx} 
+                        obj={makeObjForDinamicList(j, labels)} 
+                        name='profile'/>)}
+                    </>: <></>}
+        </div>)}</div>}
+    
+        
+        {state == 'offerForm' && <div className='createOfferDesign'> <DinamicForm 
                 action={createOffer}
                 handler={inputHandler}
                 cb={setOfferFormValue}
                 elements={offerInputs}/>
             
         </div>}
+
         <div className='homeButtonsDesign'>
                 {Object.keys(possibleStates)
                     .filter(e => e != state)
                     .map((e, i) => 
                         <div key={i} className='offersButtonDesign'>
-                            <button onClick={()=> setState(e)}>{possibleStates[e]}</button>
+                            <ActionButton action={()=> setState(e)} placeholder={possibleStates[e]}/>
                         </div>)}
         </div>
     </div>

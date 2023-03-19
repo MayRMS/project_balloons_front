@@ -15,6 +15,7 @@
     width: 100vw;
     background-image: url(./fondoLogin3.jpeg);
     background-repeat: no-repeat;
+    background-size:contain;
     text-align: center;
     color: #3F0D02;
 }
@@ -23,11 +24,13 @@
 
     display: flex;
     flex-direction: column;
-    background-color: #ff9f21b3;
-    border-radius: 6px;
+    justify-content: center;
     align-items: center;
-    height: 55%;
-    width: 45%;
+    background-color: #ff9f21b3;
+    border-radius: 50px;
+    align-items: center;
+    height: 35%;
+    width: 35%;
     font-weight: bold;
     font-family: 'I Love Glitter';
     text-align:center;
@@ -35,20 +38,19 @@
 }
 
 input {
-    width: 50%;
+    width: 30%;
     height: 15%;
-    margin: 4%;
     font-family: 'My December';
     font-weight: bolder;
     font-size: 190%;
-    border-radius: 4px;
+    border-radius: 4%;
     border: #fa8509;
 }
 
 .linkDesign { 
     font-weight: bold;
-    font-size: 40px;
-    border-radius: 10px;
+    font-size: 40%;
+    border-radius: 10%;
     margin-top: 5%;
     text-decoration: underline;
     color:rgb(65, 158, 158);
@@ -99,11 +101,33 @@ button:active {
 }
 
 
-  @media (max-width:380px){
+.checkboxDesign{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1em;    
+    font-family: 'I Love Glitter';
+    font-size: 190%;
+    font-weight: bolder;
+    height: 30%;
+    width: 45%;
+}
+
+
+.checkbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35%;
+    width: 45%;
+}
+
+
+  @media (max-width:804px){
     input {
         width: 80%;
-        margin: 5%;
-        font-size: 200%;
+        margin: 4%;
+        font-size: 90%;
         border-radius: 4px;
         border: #fa8509;
     }
@@ -113,29 +137,28 @@ button:active {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 80vh;
-        width: 100vw;
+        width: 100%;
         background-image: url(./fondoLogin3.jpeg);
-        background-repeat: no-repeat;
+        background-repeat: repeat-y;
         background-size: cover;
-        text-align: center;
+        
         color: #3F0D02;
     }
 
     .loginDesign {
-        height: 45%;
+        height: 100%;
         width: 70%;
         font-weight: bold;
         margin-top: 10%;
-        background-color: #ff9f21;
+        background-color: #ff9f2176;
     }
 
     .linkDesign {
         font-weight: bold;
         font-family: 'I Love Glitter';
-        font-size: 170%;
+        font-size: 70%;
         margin-left: 35%;
-        margin-top: 15%;
+        margin-top: 10%;
         font-family: 'My December';
     }
 }

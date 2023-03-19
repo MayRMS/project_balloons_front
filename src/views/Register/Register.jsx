@@ -23,15 +23,16 @@ const Register = () => {
     return (
         <div>
             <Header text="ESTAMOS EN REGISTER"/>
-           <div>
+           <div className='registerContainer'>
            <div className='registerDesign'>
             <DinamicForm 
                 action={() => makeRegister()}
                 handler={inputHandler}
                 cb={setCredentials}
-                elements={userTypes[type].formInputs}/>
+                elements={userTypes[type].formInputs}
+                buttonClassName={type === userTypes.user.type ? 'userButton' : 'carerButton'}/>
             </div>
-            <div className='linkDesign' onClick={() => setType(getOppositeType(userTypes, type).type)}>ERES UN {getOppositeType(userTypes, type).translation}? REGISTRATE AQUÍ </div>
+            <div className='linkDesign' onClick={() => setType(getOppositeType(userTypes, type).type)}>Eres un {getOppositeType(userTypes, type).translation}? REGÍSTRATE AQUÍ </div>
             </div>
         </div>
     );

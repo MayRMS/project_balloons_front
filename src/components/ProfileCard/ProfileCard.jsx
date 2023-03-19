@@ -1,4 +1,6 @@
 
+//Se deja como testigo del proceso de aprendizaje pero no se usa
+
 import React from 'react';
 import './ProfileCard.css';
 

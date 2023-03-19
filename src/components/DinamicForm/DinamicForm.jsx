@@ -3,7 +3,7 @@ import { ActionButton } from '../ActionButton/ActionButton';
 import { InputText } from '../InputText/InputText';
 import './DinamicForm.css'
 
-export const DinamicForm = ({elements, action, handler, cb}) => {
+export const DinamicForm = ({elements, action, handler, cb, buttonClassName = 'actionButton'}) => {
     return (
         <>
         {elements.map((e, i) => <InputText 
@@ -15,7 +15,7 @@ export const DinamicForm = ({elements, action, handler, cb}) => {
             handler={handler} 
             cb={cb}
         />)}
-        <ActionButton action={action} placeholder={'enviar*'}/>
+        <ActionButton action={action} placeholder={'enviar*'} name={buttonClassName}/>
         </>
     )
 }

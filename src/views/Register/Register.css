@@ -14,7 +14,9 @@
     align-items: center;
     height: 85vh;
     width: 100vw;
+    background-image: url(../../views/Login/fondoLogin3.jpeg);
     background-repeat: no-repeat;
+    background-size:contain;
     text-align: center;
     color: #3F0D02;
 }
@@ -23,11 +25,12 @@
 
     display: flex;
     flex-direction: column;
-    background-color: #ee9623b3;
-    border-radius: 6px;
+    justify-content: center;
     align-items: center;
-    height: 55%;
-    width: 45%;
+    background-color: #ff9f21b3;
+    border-radius: 50px;
+    height: 70%;
+    width: 40%;
     font-weight: bold;
     font-family: 'I Love Glitter';
     text-align:center;
@@ -42,19 +45,16 @@ input {
     font-weight: bolder;
     font-size: 190%;
     border-radius: 4px;
-    border: #fa8509;
+    
 }
 
 .linkDesign { 
     font-weight: bold;
     font-size: 40px;
     border-radius: 10px;
-    margin-top: 5%;
     text-decoration: underline;
     color:rgb(65, 158, 158);
     font-family: 'My December';
-    
-    
 }
 
 .linkDesign:hover {
@@ -63,12 +63,21 @@ input {
     transition: 0.3s;
     
 }
+.userButton{
 
+    width: 20%;
+    height: 12%;
+}
+.carerButton{
+    width: 20%;
+    height: 10%;
+    margin-bottom: 6%;
+
+}
 button {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 3%;
     border-radius: 1em;
     cursor: pointer;
     transition: 0.2s;
@@ -83,7 +92,7 @@ button {
     box-shadow: .5em .5rem 1rem #ccc,
         -.5em -.5rem 1rem #fff;
     font-family: 'I Love Glitter';
-    font-size: 190%;
+    font-size: 180%;
     font-weight: bolder;
 }
 button:hover {
@@ -99,43 +108,56 @@ button:active {
 }
 
 
-  @media (max-width:380px){
+  @media (max-width:804px){
     input {
         width: 80%;
         margin: 5%;
         font-size: 200%;
         border-radius: 4px;
-        border: #fa8509;
+        
     }
 
-    .loginContainer{
+    .registerContainer{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 80vh;
         width: 100vw;
-        
         background-repeat: no-repeat;
         background-size: cover;
         text-align: center;
         color: #3F0D02;
     }
 
-    .loginDesign {
-        height: 45%;
-        width: 70%;
+    .registerDesign {
+        height:50%;
+        width: 80%;
         font-weight: bold;
-        margin-top: 10%;
-        background-color: #ff9f21;
+        margin-top: 3%;
+        background-color: transparent;
     }
 
     .linkDesign {
         font-weight: bold;
         font-family: 'I Love Glitter';
         font-size: 170%;
+        width: 40%;
+        height: 10%;
         margin-left: 35%;
-        margin-top: 15%;
+        margin-top: 25%;
         font-family: 'My December';
+    }
+
+    .userButton{
+
+        width: 40%;
+        height: 12%;
+        margin-bottom: 3%;
+    }
+    .carerButton{
+        width: 40%;
+        height: 10%;
+        margin-bottom: 10%;
+
     }
 }
