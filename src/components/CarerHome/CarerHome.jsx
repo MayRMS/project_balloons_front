@@ -22,21 +22,22 @@ export const CarerHome = () => {
 
     const userLoged = useSelector(userData);
     const userId = userLoged?.userPass?.carer?.id
+    const token = userLoged?.userPass?.token
     const getOppositeType = () => Object.keys(possibleStates).find(e => e != state);
 
     const getOffers = async () => {
-        const res = await getAllOffers()
+        const res = await getAllOffers(token)
         setOffers(res.offers)
     };
     const applyOffer = async (offerId) => {
-        await apply(offerId, userLoged.userPass.carer.id)
+        await apply(offerId, userLoged.userPass.carer.id, token)
         setOffers(offers.map(e => e.id === offerId 
             ? {...e, registeredCarers: [...e.registeredCarers, userId]} 
             : e
         ))
     };
     const listCarerOffers = async () => {
-        const res = await getOfferByCarer(userId)
+        const res = await getOfferByCarer(userId, token)
         setOffers(res)
     };
     

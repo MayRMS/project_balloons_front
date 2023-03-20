@@ -21,27 +21,27 @@ export const UserHome = () => {
 
     const userLoged = useSelector(userData);
     const userId = userLoged?.userPass?.user?.id
+    const token = userLoged?.userPass?.token
 
     const createOffer = async () => {
-        await postOffer({...offerFormValue, user: userId});
+        await postOffer({...offerFormValue, user: userId}, token);
         setState('carerList')   
     }
     const getCarersData = async () => {
-        const res = await getCarers()
+        const res = await getCarers(token)
         setCarers(res.carers)  
     }
-    const getRegisteredCarers = async (carerIds) => {
-        const res = await getCarersInOffer(carerIds)
+    const getRegisteredCarers = async (carerIds, token) => {
+        const res = await getCarersInOffer(carerIds, token)
         setCarers(res.carers)
-        console.log({carers})  
     }
     const getUserOffers = async () => {
-        const res = await listOwnOffers(userId)
+        const res = await listOwnOffers(userId, token)
         setOffers(res.offers.map(e => ({...e, list: false})))
     }
 
     useEffect( () =>{
-        if(!userId) delay(navigate, ['login'], 200);
+        if(!userId || !token) delay(navigate, ['login'], 200);
         getCarersData()
         getUserOffers()
     },[state])
@@ -62,7 +62,6 @@ return (
                     <button className='regCarersDesign' onClick={() => {
                         e.list = !e.list
                         getRegisteredCarers(e.registeredCarers)
-                        console.log(carers)
                     }}>Perfiles Inscritos</button>
                     {e.list && carers.map((j, idx) => <DinamicList
                         key={idx} 
