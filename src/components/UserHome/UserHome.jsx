@@ -20,6 +20,7 @@ export const UserHome = () => {
     const [offerFormValue, setOfferFormValue] = useState(formValues);
 
     const userLoged = useSelector(userData);
+    console.log(userLoged)
     const userId = userLoged?.userPass?.user?.id
     const token = userLoged?.userPass?.token
 
@@ -61,7 +62,7 @@ return (
                 {e.registeredCarers.length ? <>
                     <button className='regCarersDesign' onClick={() => {
                         e.list = !e.list
-                        getRegisteredCarers(e.registeredCarers)
+                        getRegisteredCarers(e.registeredCarers, token)
                     }}>Perfiles Inscritos</button>
                     {e.list && carers.map((j, idx) => <DinamicList
                         key={idx} 

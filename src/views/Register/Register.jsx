@@ -17,7 +17,7 @@ const Register = () => {
     const [credentials, setCredentials] = useState(userTypes[type].credentials);
     const makeRegister = async () => {
         const newUser =  await postRegister(credentials, type);
-        dispatch(login({[type]: newUser[type], token: newUser.token, type}));
+        dispatch(login({userPass: {[type]: newUser[type], token: newUser.token, type}}));
         delay(navigate, ["/"], 750);
     }
     return (

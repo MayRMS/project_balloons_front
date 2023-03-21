@@ -27,7 +27,7 @@ export const CarerHome = () => {
 
     const getOffers = async () => {
         const res = await getAllOffers(token)
-        setOffers(res.offers)
+        res && setOffers(res.offers)
     };
     const applyOffer = async (offerId) => {
         await apply(offerId, userLoged.userPass.carer.id, token)
@@ -43,7 +43,7 @@ export const CarerHome = () => {
     
     useEffect( () => {
         if(!userId) delay(navigate, ['login'], 200);
-        state == 'offerList' ? getOffers() : listCarerOffers();
+        if (token) state == 'offerList' ? getOffers() : listCarerOffers();
     },[state]);
 
 return (
@@ -52,7 +52,7 @@ return (
     <div className='myOffersDesign'>
     <ActionButton action={()=> setState(getOppositeType())} placeholder={possibleStates[getOppositeType()]}/>
     </div>
-        {offers.map((e, i) => <div key={i}>
+        {offers?.map((e, i) => <div key={i}>
             <DinamicList  obj={makeObjForDinamicList(e, labels)} name='list blocklist'/>
             {state === 'offerList' && !e.registeredCarers?.includes(userId) && <button onClick={()=> applyOffer(e.id)}>inscribirme!</button>}                                        
         </div>)}

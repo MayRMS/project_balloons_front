@@ -63,7 +63,7 @@ export const listOwnOffers = async (id, token) => {
 }
 export const apply = async (offerId, carerId, token) => {
     try {
-        const res = await axios.put(`${root}/offer/${offerId}/carer/${carerId}`, setHeaders(token))
+        const res = await axios.put(`${root}/offer/${offerId}/carer/${carerId}`, null, setHeaders(token))
         return res.data;
     } catch (error) {
         console.log(error)

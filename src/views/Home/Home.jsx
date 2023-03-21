@@ -13,14 +13,16 @@ const Home = () => {
     const navigate = useNavigate();
     const userLoged = useSelector(userData);
 
+    const token = userLoged.userPass.token
+    console.log(token)
     useEffect(() => {
-        !userLoged.userPass.token && setTimeout(() => { navigate("/login") }, 200)
+        !token && setTimeout(() => { navigate("/login") }, 200)
     })
 return (
     <div >
         <Header text="ESTAMOS EN HOME"/>
         <div className='homeDesign'>
-            <div className='listDesign'>{userLoged.userPass.type == 'user' ? <UserHome/> : <CarerHome/>} </div>
+            <div className='listDesign'>{token && userLoged.userPass.type == 'user' ? <UserHome/> : <CarerHome/>} </div>
         </div>
     </div>
 );
